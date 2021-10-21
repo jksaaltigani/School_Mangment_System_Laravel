@@ -50,7 +50,6 @@ class ArticalsController extends Controller
      */
     public function store(ArticalREquest $request)
     {
-	    return $request;
         try {
             DB::beginTransaction();
             //store post

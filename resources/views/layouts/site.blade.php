@@ -13,7 +13,7 @@
     @toastr_css
 </head>
 
-<body class="" style="--main-color:@yield ('main_color' , 'red')">
+<body class="" style="--main-color:@yield ('main_color' , '#0e376a')">
     <!-- Loader -->
     {{-- <div id="global_loader">
         <img src="{{ URL::asset('assets/img/loader.svg') }}" class="loader-img" alt="Loader">

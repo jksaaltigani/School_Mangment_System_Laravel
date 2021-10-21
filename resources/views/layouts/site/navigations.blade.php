@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="col-6 website_logo">
-                <img src="{{ asset('assets/img/visa.png') }}" alt="page conten" class="logo_img">
+                <img src="{{ asset('public_img/logo.png') }}" alt="page conten" class="logo_img">
             </div>
             <div class="hidden_and_show_by_click">
                 <div class="search_min_midea">

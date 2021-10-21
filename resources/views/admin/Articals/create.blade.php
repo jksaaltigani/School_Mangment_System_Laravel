@@ -3,7 +3,8 @@
 @section('css')
     <link href="{{ URL::asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
-
+    <link href="{{ URL::asset('assets/plugins/quill/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/plugins/quill/quill.bubble.css') }}" rel="stylesheet">
 @endsection
 @section('page-header')
 
@@ -103,17 +104,32 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="main-content-label mg-b-5">
+                                                                    Form Editor
+                                                                </div>
+                                                                <p class="mg-b-20">It is Very Easy to Customize and it uses
+                                                                    in your website apllication.</p>
+                                                                <div class="ql-wrapper ql-wrapper-demo bg-gray-100">
+                                                                    <div id="quillEditor">
+                                                                        <p>type your content </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <label for="projectinput1">
                                                         {{ __('layout.artical') }} </label>
                                                     <textarea name="content" id="content" class='form-control' cols="30"
                                                         rows="10" placeholder="type content ..">
-                                                                                                                                                    {{ old('content') }}
+                                                                                                                                                                                           {{ old('content') }}
                                                                                                                                                     </textarea>
                                                     @error('content')
                                                         <span class="text-danger">{{ __('layout.req') }}</span>
                                                     @enderror
                                                 </div>
-
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -186,5 +202,16 @@
 @endsection
 @section('js')
     <script src="{{ URL::asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
-    <script src="{{ URL::asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>		
+    <script src="{{ URL::asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+    <!--Internal quill js -->
+    <script src="{{ URL::asset('assets/plugins/quill/quill.min.js') }}"></script>
+    <!-- Internal Form-editor js -->
+    <script src="{{ URL::asset('assets/js/form-editor.js') }}"></script>
+    <script>
+        $('#quillEditor').on('keyup', function() {
+            console.log($('#quillEditor').html());
+            $('textarea').html($('#quillEditor').html());
+        });
+    </script>
 @endsection

@@ -55,44 +55,46 @@
                 </div>
             </div>
         </div>
-        <div class="post_info_ads">
-            <div class="pupular_articals">
-                <h4 class="custom_head">
-                    <span>
+        <div class="container">
+            <div class="post_info_ads">
+                <div class="pupular_articals">
+                    <h4 class="custom_head">
                         <span>
-                            <i class="angle fe fe-chevron-left"></i>
+                            <span>
+                                <i class="angle fe fe-chevron-left"></i>
+                            </span>
+                            {{ __('layout.watch too') }}
                         </span>
-                        {{ __('layout.watch too') }}
-                    </span>
-                </h4>
-                @if ($watch_to->count() > 1)
-                    @foreach ($watch_to as $artical)
-                        <div class="latest_post_artical">
-                            <div class="inline_artical">
-                                <div class="inline_img">
-                                    <a href="{{ route('show_artical', $artical->id) }}">
-                                        <img src="{{ $artical->min_photo }}" alt="" class='inline_img_class'>
-                                    </a>
-                                </div>
-                                <div class="inline_artical_description">
-                                    <a href="{{ route('show_artical', $artical->id) }}">
-                                        <span class="inline_short_des">
-                                            {{ $artical->short_desc }}
-                                        </span>
-                                        {{ $artical->name }}
-                                    </a>
-                                    {{-- <h6>{{ $artical->created_at }}</h6> --}}
+                    </h4>
+                    @if ($watch_to->count() > 1)
+                        @foreach ($watch_to as $artical)
+                            <div class="latest_post_artical">
+                                <div class="inline_artical">
+                                    <div class="inline_img">
+                                        <a href="{{ route('show_artical', $artical->id) }}">
+                                            <img src="{{ $artical->min_photo }}" alt="" class='inline_img_class'>
+                                        </a>
+                                    </div>
+                                    <div class="inline_artical_description">
+                                        <a href="{{ route('show_artical', $artical->id) }}">
+                                            <span class="inline_short_des">
+                                                {{ $artical->short_desc }}
+                                            </span>
+                                            {{ $artical->name }}
+                                        </a>
+                                        {{-- <h6>{{ $artical->created_at }}</h6> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                @endif
+                        @endforeach
+                    @endif
+                </div>
+                <div class='post_content'>
+                    <div class="margin_top"></div>
+                    <p> {{ $artical->content }}</p>
+                </div>
+                <div class="post_ads"></div>
             </div>
-            <div class='post_content'>
-                <div class="margin_top"></div>
-                <p> {{ $artical->content }}</p>
-            </div>
-            <div class="post_ads"></div>
         </div>
         <div class="wirter_chose">
             <h4 class="custom_head">

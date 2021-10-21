@@ -8,5 +8,4 @@
 <link href="{{ URL::asset('assets/css/icons.css') }}" rel="stylesheet">
 <!--  Custom Scroll bar-->
 <link href="{{ URL::asset('assets/plugins/mscrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
-
 @yield('css')
