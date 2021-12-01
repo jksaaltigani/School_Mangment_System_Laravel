@@ -18,20 +18,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'mohammed altigani osman',
-            'email' => 'jksaaltigani@gmsail.comm',
-            'password' => bcrypt(1234567890),
-            'permission_id' => 1,
-        ]);
+        // User::create([
+        //     'name' => 'mohammed altigani osman',
+        //     'email' => 'jksaaltigani@gmsail.comm',
+        //     'password' => bcrypt(1234567890),
+        //     'permission_id' => 1,
+        // ]);
 
         $category = ['السياسيه ', ' الرياضيه', ' الثقافيه'];
-        for ($i = 0; $i < count($category); $i++) {
-            Category::create([
-                'name' => $category[$i],
-                'active' => true,
-            ]);
-        }
+        // for ($i = 0; $i < count($category); $i++) {
+        //     Category::create([
+        //         'name' => $category[$i],
+        //         'active' => true,
+        //     ]);
+        // }
 
 
         // Permissions::create([
@@ -41,11 +41,8 @@ class DatabaseSeeder extends Seeder
         DB::beginTransaction();
 
         for ($j = 1; $j < count($category); $j++) {
-
-
             for ($i = 0; $i < 4; $i++) {
                 Articals::create([
-
                     "name" => "mohammed altigani osman",
                     "description" => "this is first books to upladed herer",
                     "slug" => "mohammed-altigani-osman",
@@ -56,6 +53,7 @@ class DatabaseSeeder extends Seeder
                     "photo" => "3hPJvLXpinw35s3q1COu7boa8eVJxTVtuVVmDEyj.png",
                     "user_id" => 1,
                     "category_id" => $j,
+                    'fack_data' => 'as',
                     "view" => 0,
                 ]);
             }

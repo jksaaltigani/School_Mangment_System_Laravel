@@ -21,18 +21,18 @@
                             <div>
                                 <div class="block_artical">
                                     <div class="block_artical_img">
-                                        <a href="{{ route('show_artical', $artical->id) }}">
+                                        <a href="{{ route('show_artical', $artical->slug) }}">
                                             <img src="{{ $artical->photo }}" alt="" class="block_artical_img_class">
                                         </a>
                                     </div>
                                     <div class="artical_descrption">
-                                        <a href="{{ route('show_artical', $artical->id) }}">
+                                        <a href="{{ route('show_artical', $artical->slug) }}">
                                             <span class="short_des">
                                                 {{ $artical->short_desc }}
                                             </span>
                                             {{ $artical->name }}
                                         </a>
-                                        <h6>{{ $artical->created_at }}</h6>
+                                        <h6>{{ $artical->created_at->diffForHumans() }}</h6>
                                     </div>
                                 </div>
                             </div>

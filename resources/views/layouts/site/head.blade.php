@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="{{ asset('assets/css/site/navgation.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/site/footer.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/site/social_links.css') }}">
-
+<link rel="stylesheet" href="{{ asset('assets/css/site/grid_system.css') }}">
 
 <link rel='stylesheet' href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" <link
     href="{{ URL::asset('assets/plugins/mscrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />

@@ -11,9 +11,8 @@ class LandingPageController extends Controller
     public function index()
     {
         $data = [];
-        $data['leatest_post'] = Articals::limit(4)->get();
+        $data['leatest_post'] = Articals::limit(4)->orderBy('created_at', 'DESC')->get();
         $data['categories'] = [];
-
         $categories = Category::get();
         foreach ($categories as $category) {
             $articals = Articals::where('category_id', $category->id)->orderBy('created_at', 'desc')->limit(4)->get();
@@ -31,5 +30,11 @@ class LandingPageController extends Controller
     public function contact()
     {
         return view('site.contant');
+    }
+
+    public function setting()
+    {
+        return auth()->user()->permission->permissions;
+        // return auth()->user()->hasApilty('users');
     }
 }

@@ -57,8 +57,6 @@
 
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-
-
                                                     <a href=' {{ route('articals.show', $artical->id) }}'
                                                         class='btn btn-sm btn-outline-success p-0 ml-2 edit_btn'>
                                                         <i class="mdi mdi-eye" style="font-size: 14px; margin:3px 5px"></i>
@@ -110,8 +108,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">{{ __('layout.add category') }}</h6><button aria-label="Close" class="close"
-                        data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title">{{ __('layout.add category') }}</h6><button aria-label="Close"
+                        class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('articals.destroy', 1) }}" method="post">

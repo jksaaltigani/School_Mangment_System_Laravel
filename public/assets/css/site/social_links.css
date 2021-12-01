@@ -1,4 +1,5 @@
 .social_link {
+    cursor: pointer;
     position: fixed;
     bottom: 15%;
     left: 0;

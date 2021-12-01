@@ -21,13 +21,15 @@
                     quisquam dolor a. Minus quos cupiditate</p>
             </div>
             <div class="subscribe_input">
-                <form action="{{ route('mail.subscribe') }}" method="POST">
+                {{-- <form action="{{ route('mail.subscribe') }}" method="POST">
                     @csrf
                     <div class="input_container">
                         <input type="email" class="subscribe_input_filed" name='email'
                             placeholder="{{ __('layout.write your email') }}">
                         <button class="subscribe_button">{{ __('layout.subscribe') }}</button>
-                    </div>
+                    </div> --}}
+
+                <span class="subscribe_button">{{ __('layout.subscribe') }}</span>
                 </form>
             </div>
         </div>

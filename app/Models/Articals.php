@@ -10,11 +10,9 @@ class Articals extends Model
 {
     use HasFactory, SoftDeletes;
 
-
     protected $fillable = [
         'id', 'name', 'description', 'sort_des', 'slug', 'content', 'photo',    'user_id',    'category_id',  'tag',  'created_at', 'updated_at'
     ];
-
 
     public function scopeActive($q)
     {
@@ -33,12 +31,12 @@ class Articals extends Model
 
     public function getPhotoAttribute($key)
     {
-        return $key ? asset('/articals/'.$this->id ."/"  . $key) : asset('public_img/03.png');
+        return $key ? asset('/articals/' . $this->id . "/"  . $key) : asset('public_img/03.png');
     }
 
     public function getMinPhotoAttribute($key)
     {
-        return  $key ? asset('/articals/'.$this->id ."/" . $key)   : asset('public_img/vr.png');
+        return  $key ? asset('/articals/' . $this->id . "/" . $key)   : asset('public_img/vr.png');
     }
 
     #################### realtion section ##########################

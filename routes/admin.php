@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
-    Route::get('index/', function () {
+    Route::get('/index', function () {
         return view('admin.index');
     })->name('index');
 
@@ -29,4 +29,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('articals', ArticalsController::class);
         Route::get('status/{id}', [ArticalsController::class, 'changeStatus'])->name('articals.status');
     });
+
+    Route::get('/', [ArticalsController::class, 'index'])->name('artical.index');
 });

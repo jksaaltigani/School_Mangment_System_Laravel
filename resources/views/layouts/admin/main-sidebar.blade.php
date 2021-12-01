@@ -39,33 +39,37 @@
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="side-item side-item-category">{{ __('layout.setting') }}</li>
-            <li class="slide">
-                <a class="side-menu__item" href="{{ route('permissions.index') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
-                            opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
-                        <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
-                    </svg><span class="side-menu__label">{{ __('layout.permissions') }}</span></a>
-            </li>
+            @can('users')
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ route('permissions.index') }}"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path
+                                d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
+                                opacity=".3" />
+                            <circle cx="15.5" cy="9.5" r="1.5" />
+                            <circle cx="8.5" cy="9.5" r="1.5" />
+                            <path
+                                d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                        </svg><span class="side-menu__label">{{ __('layout.permissions') }}</span></a>
+                </li>
+            @endcan
 
-            <li class="slide">
-                <a class="side-menu__item" href="{{ route('category.index') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path
-                            d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
-                            opacity=".3" />
-                        <circle cx="15.5" cy="9.5" r="1.5" />
-                        <circle cx="8.5" cy="9.5" r="1.5" />
-                        <path
-                            d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
-                    </svg><span class="side-menu__label">{{ __('layout.categories') }}</span></a>
-            </li>
+            @can('users')
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ route('category.index') }}"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path
+                                d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm3.5 4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.32-1.45-5.12-3.5h1.67c.7 1.19 1.97 2 3.45 2s2.76-.81 3.45-2h1.67c-.8 2.05-2.79 3.5-5.12 3.5z"
+                                opacity=".3" />
+                            <circle cx="15.5" cy="9.5" r="1.5" />
+                            <circle cx="8.5" cy="9.5" r="1.5" />
+                            <path
+                                d="M12 16c-1.48 0-2.75-.81-3.45-2H6.88c.8 2.05 2.79 3.5 5.12 3.5s4.32-1.45 5.12-3.5h-1.67c-.69 1.19-1.97 2-3.45 2zm-.01-14C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                        </svg><span class="side-menu__label">{{ __('layout.categories') }}</span></a>
+                </li>
+            @endcan
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -78,8 +82,10 @@
                     </svg><span class="side-menu__label">{{ __('layout.users') }}</span><i
                         class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ route('user.index') }}">{{ __('layout.users') }}</a></li>
-                    <li><a class="slide-item" href="{{ route('user.create') }}">{{ __('layout.add users') }}</a>
+                    <li><a class="slide-item" href="{{ route('user.index') }}">{{ __('layout.users') }}</a>
+                    </li>
+                    <li><a class="slide-item"
+                            href="{{ route('user.create') }}">{{ __('layout.add users') }}</a>
                     </li>
                 </ul>
             </li>
@@ -100,12 +106,14 @@
                     <li><a class="slide-item"
                             href="{{ route('articals.create') }}">{{ __('layout.add new artical') }}</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'rangeslider')) }}">Range-slider</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'rangeslider')) }}">Range-slider</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'calendar')) }}">Calendar</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'contacts')) }}">Contacts</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'image-compare')) }}">Image-compare</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'notification')) }}">Notification</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'notification')) }}">Notification</a>
+                    </li>
                     <li><a class="slide-item"
                             href="{{ url('/' . ($page = 'widget-notification')) }}">Widget-notification</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'treeview')) }}">Treeview</a></li>
@@ -122,7 +130,8 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'alerts')) }}">Alerts</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'avatar')) }}">Avatar</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'breadcrumbs')) }}">Breadcrumbs</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'breadcrumbs')) }}">Breadcrumbs</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'buttons')) }}">Buttons</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'badge')) }}">Badge</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'dropdown')) }}">Dropdown</a></li>
@@ -134,7 +143,8 @@
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'popover')) }}">Popover</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'progress')) }}">Progress</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'spinners')) }}">Spinners</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'media-object')) }}">Media Object</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'media-object')) }}">Media Object</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'typography')) }}">Typography</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'tooltip')) }}">Tooltip</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'toast')) }}">Toast</a></li>
@@ -162,7 +172,8 @@
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'collapse')) }}">Collapse</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'modals')) }}">Modals</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'timeline')) }}">Timeline</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'sweet-alert')) }}">Sweet Alert</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'sweet-alert')) }}">Sweet Alert</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'rating')) }}">Ratings</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'counters')) }}">Counters</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'search')) }}">Search</a></li>
@@ -181,9 +192,11 @@
                     </svg><span class="side-menu__label">Mail</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'mail')) }}">Mail</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'mail-compose')) }}">Mail Compose</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'mail-compose')) }}">Mail Compose</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'mail-read')) }}">Read-mail</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'mail-settings')) }}">mail-settings</a>
+                    <li><a class="slide-item"
+                            href="{{ url('/' . ($page = 'mail-settings')) }}">mail-settings</a>
                     </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'chat')) }}">Chat</a></li>
                 </ul>
@@ -197,15 +210,21 @@
                             d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
                     </svg><span class="side-menu__label">Forms</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-elements')) }}">Form Elements</a>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-elements')) }}">Form
+                            Elements</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-advanced')) }}">Advanced Forms</a>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-advanced')) }}">Advanced
+                            Forms</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-layouts')) }}">Form Layouts</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-validation')) }}">Form Validation</a>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-layouts')) }}">Form Layouts</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-wizards')) }}">Form Wizards</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-editor')) }}">WYSIWYG Editor</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-validation')) }}">Form
+                            Validation</a>
+                    </li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-wizards')) }}">Form Wizards</a>
+                    </li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'form-editor')) }}">WYSIWYG Editor</a>
+                    </li>
                 </ul>
             </li>
             <li class="slide">
@@ -217,8 +236,10 @@
                             d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 19H5v-9h3v9zm7 0h-5v-9h5v9zm5 0h-3v-9h3v9zm0-11H5V5h15v3z" />
                     </svg><span class="side-menu__label">Tables</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'table-basic')) }}">Basic Tables</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'table-data')) }}">Data Tables</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'table-basic')) }}">Basic Tables</a>
+                    </li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'table-data')) }}">Data Tables</a>
+                    </li>
                 </ul>
             </li>
             <li class="slide">
@@ -244,8 +265,10 @@
                         <circle cx="12" cy="9" r="2.5" />
                     </svg><span class="side-menu__label">Maps</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'map-leaflet')) }}">Mapel Maps</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'map-vector')) }}">Vector Maps</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'map-leaflet')) }}">Mapel Maps</a>
+                    </li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'map-vector')) }}">Vector Maps</a>
+                    </li>
                 </ul>
             </li>
             <li class="side-item side-item-category">Pages</li>
@@ -277,7 +300,8 @@
                     </svg><span class="side-menu__label">Pages</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'profile')) }}">Profile</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'editprofile')) }}">Edit-Profile</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'editprofile')) }}">Edit-Profile</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'invoice')) }}">Invoice</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'pricing')) }}">Pricing</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'gallery')) }}">Gallery</a></li>
@@ -297,7 +321,8 @@
                             d="M12 22c5.52 0 10-4.48 10-10 0-4.75-3.31-8.72-7.75-9.74l-.08-.04-.01.02C13.46 2.09 12.74 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10zm0-2c-.38 0-.74-.04-1.1-.09L14.89 13l2.72 4.7C16.16 19.12 14.18 20 12 20zm8-8c0 1.85-.64 3.55-1.7 4.91l-4-6.91h5.43c.17.64.27 1.31.27 2zm-.59-3h-7.99l2.71-4.7c2.4.66 4.35 2.42 5.28 4.7zM12 4c.37 0 .74.03 1.1.08L10.27 9l-1.15 2L6.4 6.3C7.84 4.88 9.82 4 12 4zm-8 8c0-1.85.64-3.55 1.7-4.91L8.54 12l1.15 2H4.26C4.1 13.36 4 12.69 4 12zm6.27 3h2.3l-2.71 4.7c-2.4-.67-4.35-2.42-5.28-4.7h5.69z" />
                     </svg><span class="side-menu__label">Utilities</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'background')) }}">Background</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'background')) }}">Background</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'border')) }}">Border</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'display')) }}">Display</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'flex')) }}">Flex</a></li>
@@ -316,13 +341,16 @@
                         <path d="M6 20h12V10H6v10zm6-7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" opacity=".3" />
                         <path
                             d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
-                    </svg><span class="side-menu__label">Custom Pages</span><i class="angle fe fe-chevron-down"></i></a>
+                    </svg><span class="side-menu__label">Custom Pages</span><i
+                        class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'signin')) }}">Sign In</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'signup')) }}">Sign Up</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'forgot')) }}">Forgot Password</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'forgot')) }}">Forgot Password</a>
+                    </li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'reset')) }}">Reset Password</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'lockscreen')) }}">Lockscreen</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'lockscreen')) }}">Lockscreen</a>
+                    </li>
                     <li><a class="slide-item"
                             href="{{ url('/' . ($page = 'underconstruction')) }}">UnderConstruction</a></li>
                     <li><a class="slide-item" href="{{ url('/' . ($page = '404')) }}">404 Error</a></li>
@@ -342,7 +370,8 @@
                 <ul class="slide-menu">
                     <li class="sub-slide">
                         <a class="sub-side-menu__item" data-toggle="sub-slide"
-                            href="{{ url('/' . ($page = '#')) }}"><span class="sub-side-menu__label">Level1</span><i
+                            href="{{ url('/' . ($page = '#')) }}"><span
+                                class="sub-side-menu__label">Level1</span><i
                                 class="sub-angle fe fe-chevron-down"></i></a>
                         <ul class="sub-slide-menu">
                             <li><a class="sub-slide-item" href="{{ url('/' . ($page = '#')) }}">Level01</a></li>

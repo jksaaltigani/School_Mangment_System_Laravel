@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     public function hasApilty($permiss)
     {
-        $roles = $this->roles;
+        $roles = $this->permission;
         if (!$roles)
             return false;
 

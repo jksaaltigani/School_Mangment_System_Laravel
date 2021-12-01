@@ -16,9 +16,9 @@ footer {
 .grid_footer div {
     padding: 10px;
 }
-/* .grid_footer div a {
+.grid_footer div a {
     color: #fff !important;
-} */
+}
 /*########################### sbuscribe section  #############################*/
 .subscribe_email {
     display: flex;
@@ -44,9 +44,12 @@ footer {
 .subscribe_descrption {
     padding: 50px 30px;
 }
-/* .subscribe_input {
+.subscribe_input {
     display: flex;
-} */
+    align-items:center;
+    justify-content:center;
+
+}
 .input_container {
     display: flex;
     justify-content: space-between;
@@ -62,11 +65,10 @@ footer {
     padding: 5px;
 }
 .subscribe_button {
-    all: unset;
+    display: inline-block;
     background: rgba(255 255 255 / 0.59);
-    width: 20%;
-    /* border-radius: 5px 0 0 5px; */
-    padding: 5px 10px;
+    border-radius: 5px ;
+    padding: 5px 20px;
     font-size: 20px;
     text-align: center;
 }

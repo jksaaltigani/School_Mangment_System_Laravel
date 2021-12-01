@@ -1,3 +1,14 @@
+a{
+    font-weight:bold;
+    text-decoration: none;
+}
+svg{
+    max-width: 20px;
+}
+a:hover{
+text-decoration:none
+}
+
 .top_nav_ul {
     margin: 0;
     padding: 0;
@@ -37,7 +48,7 @@
     text-align: right;
 }
 .logo_img {
-    width: 150px;
+    width: 130px;
     height: 100px;
 }
 

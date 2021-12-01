@@ -9,7 +9,7 @@ class LatestPost extends Controller
 {
     public function index()
     {
-        $articals =  Articals::paginate(12);
+        $articals =  Articals::orderBy('created_at', 'desc')->paginate(12);
         return view('site.latestpost', compact('articals'));
     }
 }

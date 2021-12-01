@@ -84,7 +84,7 @@
         </div>
     </div>
 </div>
-<div class="sticy">
+<div class="sticy ">
     <div class="buttom_links">
         <ul class="links_ul">
             <div class="container">

@@ -9,10 +9,12 @@ use App\Http\Controllers\ShowArticalController;
 
 use App\Http\Controllers\UserController;
 use App\Models\Permissions;
+use GuzzleHttp\Middleware;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+// use Redis;
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 const PAGNAITE = 12;
+
+// Route::get('/re', function () {
+//     dd(Redis::get('jksa'));
+// });
 
 
 

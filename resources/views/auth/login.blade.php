@@ -37,16 +37,17 @@
                                             <form action="{{ route('login') }}" method='post'>
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label>Email</label> <input class="form-control"
-                                                        placeholder="Enter your email" type="text">
-                                                    @error('name')
+                                                    <label>Email</label>
+                                                    <input class="form-control" placeholder="Enter your email" type="text"
+                                                        name='email'>
+                                                    @error('email')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Password</label> <input class="form-control"
+                                                    <label>Password</label> <input class="form-control" name='password'
                                                         placeholder="Enter your password" type="password">
 
                                                     @error('password')

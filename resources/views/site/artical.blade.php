@@ -1,6 +1,6 @@
 @extends('layouts.site')
-@section('title', __('layout.project name') . ' | ' . $artical->name);
-@section('main_color', 'gray')
+@section('title', __('layout.project name') . ' | ' . $artical->name)
+@section('main_color', $artical->category->color)
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/site/showpost.css') }}">
@@ -27,9 +27,7 @@
                 <div class="post_title">
                     <h1>
                         {{ $artical->name }}
-                    </h1>
-                    <h2>
-                        {{ $artical->description }}
+                    </h1> {{ $artical->description }}
                     </h2>
                     @if ($artical->short_desc != null)
                         <span class="short_desc">
@@ -46,11 +44,11 @@
                     </div>
                     <div class="created_at">{{ __('layout.created done') }}</div>
                     <div class="date">
-                        <h6 class='date'>{{ $artical->created_at }}</h6>
+                        <h6 class='date'>{{ $artical->created_at->diffForHumans() }}</h6>
                     </div>
                     <div class="updated_at"> {{ __('layout.updated at') }} <i class="ion-eye"></i></div>
                     <div class="date">
-                        <h6 class='date'>{{ $artical->created_at }}</h6>
+                        <h6 class='date'>{{ $artical->updated_at->diffForHumans() }}</h6>
                     </div>
                 </div>
             </div>

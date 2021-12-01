@@ -1,5 +1,6 @@
 @extends('layouts.site')
 @section('title', __('layout.project name') . ' | ' . 'الرئيسه')
+@section('color', '#fff')
 @section('content')
     <div class="container">
         {{-- ######################## statrt slider section#################################### --}}
@@ -13,14 +14,14 @@
                             <div class="latest_post_artical">
                                 <div class="inline_artical">
                                     <div class="inline_img">
-                                        <a href="{{ route('showpost', $artical->id) }}">
+                                        <a href="{{ route('showpost', $artical->sulg) }}">
                                             <img src="{{ $artical->min_photo }}" alt="" class='inline_img_class'>
                                         </a>
                                     </div>
                                     <div class="inline_artical_description">
-                                        <a href="{{ route('showpost', $artical->id) }}">
+                                        <a href="{{ route('showpost', $artical->sulg) }}">
                                             <span class="inline_short_des">
-                                                {{ $artical->short_des }}
+                                                {{ $artical->short_desc }}
                                             </span>
                                             {{ $artical->name }}
                                         </a>
@@ -52,18 +53,18 @@
                             <div class="artical">
                                 <div class="block_artical">
                                     <div class="block_artical_img">
-                                        <a href="{{ route('showpost', $artical->id) }}">
+                                        <a href="{{ route('showpost', $artical->sulg) }}">
                                             <img src="{{ $artical->photo }}" alt="" class="block_artical_img_class">
                                         </a>
                                     </div>
                                     <div class="artical_descrption">
-                                        <a href="{{ route('showpost', $artical->id) }}">
+                                        <a href="{{ route('showpost', $artical->sulg) }}">
                                             <span class="short_des">
-                                                {{ $artical->short_des }}
+                                                {{ $artical->short_desc }}
                                             </span>
                                             {{ $artical->name }}
                                         </a>
-                                        <h6>{{ $artical->created_at }}</h6>
+                                        <h6>{{ $artical->created_at->diffForHumans() }}</h6>
                                     </div>
                                 </div>
                             </div>

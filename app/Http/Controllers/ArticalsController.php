@@ -22,7 +22,7 @@ class ArticalsController extends Controller
      */
     public function index()
     {
-        $articals = Articals::with('user')->paginate(PAGNAITE);
+        $articals = Articals::with('user')->orderBy('created_at', 'desc')->paginate(PAGNAITE);
         return view('admin.Articals.index', compact('articals'));
     }
 
@@ -65,6 +65,7 @@ class ArticalsController extends Controller
             $artical->user_id = auth()->user()->id;
             $artical->view = 0;
             $artical->active = 0;
+            $artical->fack_data = 'ksjadm';
             $artical->photo = $filname;
             $artical->save();
 
@@ -94,11 +95,12 @@ class ArticalsController extends Controller
      */
     public function show($id)
     {
+        // return  $artical = Articals::find($id);
+
         try {
-            $artical = Articals::with('user')->find($id);
+            $artical = Articals::find($id);
             if (!$artical)
                 return redirect()->route('artical.index')->with(['error' => 'something went worng']);
-
             return view('articals.show', compact('artical'));
         } catch (Exception $ex) {
             return redirect()->route('artical.index')->with(['error' => 'error']);
